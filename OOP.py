@@ -33,6 +33,9 @@ def showinfo():
     num = int(input('Для просмотра характеристик машины, выберите её номер из списка\n')) - 1
     print(f'Название: {massiv[num].name}\nЦвет: {massiv[num].colour}\nКатегория: {massiv[num].type}\nДвери: {massiv[num].doors}\nФары: {massiv[num].lightsst}\n')
 
+def showall():
+    for i in range(len(massiv)):
+        print(f'Название: {massiv[i].name}\n Цвет: {massiv[i].colour}\n Категория: {massiv[i].type}\nДвери: {massiv[i].doors}\n Фары: {massiv[i].lightsst}\n')
 
 class Doors:
     doors = ['Закрыто'] * 4
@@ -146,6 +149,9 @@ class Interface():
                               sheet.cell(row=i + 1, column=3).value, sheet.cell(row=i + 1, column=4).value,
                               sheet.cell(row=i + 1, column=5).value)
                         book.close()
+
+            if menu == '6':
+                showall()
 
 
 
